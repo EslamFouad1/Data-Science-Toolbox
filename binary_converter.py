@@ -12,3 +12,8 @@ for var in bool_vars:
     df_1[var] = df_1[var].map(dict(yes = 1, no = 0)).astype(bool)
     
     print(f"Converted {var} to Boolean.")
+
+
+# Another way
+data['Consumer disputed?'] = np.where(data['Consumer disputed?']== 'Yes', 1, 0)
+data['Consumer disputed?'].value_counts()
