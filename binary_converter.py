@@ -19,4 +19,4 @@ data['Consumer disputed?'] = np.where(data['Consumer disputed?']== 'Yes', 1, 0)
 data['Consumer disputed?'].value_counts()
 
 # Another way
-df["variable"] = df["variable"].replace(["True","False"],[1,0], inplace = True)
+df["variable"] = df["variable"].replace(["True","False"],[1,0])
