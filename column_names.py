@@ -13,3 +13,8 @@ def clean_col_names(col_name):
         .lower()
     )
     return col_name
+
+bank_columns = list(bankruptcy_df.columns)
+bank_columns = [clean_col_names(col_name) for col_name in bank_columns]
+bankruptcy_df.columns = bank_columns
+display(bankruptcy_df.columns)
