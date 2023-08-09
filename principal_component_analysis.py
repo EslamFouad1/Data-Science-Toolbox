@@ -40,3 +40,15 @@ plt.figure()
 sns.scatterplot(data=df_pc, x="pc1", y="pc2", hue="diagnosis")
 plt.show()
 plt.close('all')
+
+# 3D Visualization
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+for diagnosis in df_pc.diagnosis.unique():
+    ax.scatter(df_pc.pc1[df_pc.diagnosis==diagnosis],df_pc.pc2[df_pc.diagnosis==diagnosis],df_pc.pc3[df_pc.diagnosis==diagnosis],label=diagnosis)
+ax.set_xlabel('pc1')
+ax.set_ylabel('pc2')
+ax.set_zlabel('pc3')
+ax.legend(bbox_to_anchor=(1.05, 1), loc=2)
+plt.show()
+plt.close('all')
